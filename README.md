@@ -14,6 +14,9 @@ new Date()
 new Date(milliseconds)
 new Date(dateString)
 new Date(year, month, day, hours, minutes, seconds, milliseconds)
+
+today = new Date();
+today.toDateString();
 ```
 
 ```
