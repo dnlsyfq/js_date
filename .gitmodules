@@ -1,0 +1,3 @@
+[submodule "daterangepicker"]
+	path = daterangepicker
+	url = https://github.com/dangrossman/daterangepicker.git

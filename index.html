@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./daterangepicker/daterangepicker.css">
+    <style>
+        #picker {
+            background: #ffffff;
+            cursor: pointer;
+            padding: 5px 10px;
+            border: 1px solid #cccccc;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5 mb-5" style="width:400px">
+    <div id="picker">
+        <i class="fa fa-calendar"></i>&nbsp;<span id="date"></span>&nbsp;<i class="fa fa-caret-down"></i>
+    </div>
+    <h1 id="text"></h1>
+</div>
+
+
+
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="daterangepicker/moment.min.js"></script>
+    <script src="daterangepicker/daterangepicker.js"></script>
+
+    <script>
+        $('#picker').daterangepicker({
+            startDate:moment().subtract(29,'days'),
+            endDate:moment(),
+            ranges:{
+                'Today':[moment(), moment()],
+                'Yesterday':[moment().subtract(1,'days'),moment().subtract(1,'days')],
+                'Last 7 Days':[moment().subtract(6,'days'),moment()]
+            }
+        },function(start,end){
+            $('#date').html(start.format('DD MMM YYYY') + ' - ' + end.format('DD MMM YYYY'))
+        })
+
+        $('#date').html(moment().subtract(29,'days').format('DD MMM YYYY') + ' - ' + moment().format('DD MMM YYYY'))
+
+    </script>
+</body>
+</html>
