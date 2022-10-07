@@ -7,6 +7,24 @@ setInterval(function(){
   }, 3000)
 ```
 
+
+
+```
+let timeoutId = setTimeout(function(){
+  console.log('1 Second passed')
+},1000)
+
+clearTimeout(timeoutId)
+```
+
+```
+let intervalId = setInterval(function(){
+    console.log('1 second passed')
+},1000)
+
+clearInterval(intervalId)
+```
+
 * new Date()
 new date object with the current date and time
 ```
